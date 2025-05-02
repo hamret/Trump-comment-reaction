@@ -17,7 +17,8 @@ https://github.com/danmadeira/simple-icon-badges
 중요한 의미가 있다. 특히 언론사에 따라 중립적, 지지적, 혹은 비판적 태도의 차이가 존재한다면,
 이는 뉴스 소비자에게 전달되는 정보의 방향성과 여론 형성에 미치는 영향을 보여줄 수 있다. 
 본 조사를 통해 우리는 언론사별 보도방향과 시청자 반응 간의 연관성을 확인하고자 하며, 
-이를 통해 미디어의 역할과 책임에 대한 논의의 기반을 마련하고자 한다.
+이를 통해 미디어의 역할과 책임에 대한 논의의 기반을 마련하고자 한다
+
 ---
 ## 2. 데이터 수집
 우선 트럼프의 관세 정책에 대한 반응을 가장 빠르게 확인할 수 있는곳은 유튜브라고 판단해 유튜브 댓글을 수집하였다.
@@ -27,6 +28,7 @@ https://github.com/danmadeira/simple-icon-badges
     + https://www.youtube.com/watch?v=h5P8WHBrQvo (CNBC),
     + https://www.youtube.com/watch?v=arHHAfYbM-M (MSNBC),
     + https://www.youtube.com/watch?v=F90YWg11UAU (The Late Show with Stephen Colbert)
+
 )
  - 데이터에 대한 EDA
    + 총 데이터는 약 54302건의 댓글을 수집
