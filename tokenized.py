@@ -4,7 +4,7 @@ import json
 from tqdm import tqdm
 
 # 1. 데이터 로드
-path = "data/mainC_labeled_f.csv"
+path = "testdata/mainC_labeled_f.csv"
 try:
     df = pd.read_csv(path, encoding="utf-8")
 except UnicodeDecodeError:

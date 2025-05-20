@@ -13,10 +13,9 @@ print("Using device: ", device)
 
 logging.set_verbosity_error()
 
-path = "data/mainC_labeled_f.csv"
+path = "testdata/mainC_balanced_2000.csv"
 df = pd.read_csv(path, encoding="utf-8")
 
-# 결측값 제거 및 데이터 정리
 df = df.dropna(subset=['text', 'label'])
 df['text'] = df['text'].astype(str)
 
@@ -25,31 +24,30 @@ labels = df['label'].values
 
 print("데이터 샘플:")
 print("리뷰문장: ", data_X[:3])
-print("긍정/부정: ", labels[:3])
+print("지지/비지지: ", labels[:2])
 
 tokenizer = MobileBertTokenizer.from_pretrained('google/mobilebert-uncased', do_lower_case=True)
-
 inputs = tokenizer(data_X, truncation=True, max_length=256, padding="max_length", return_tensors="pt")
 
-input_ids = inputs['input_ids'].tolist()
-attention_mask = inputs['attention_mask'].tolist()
+input_ids = inputs['input_ids']
+attention_mask = inputs['attention_mask']
+labels = torch.tensor(labels)
 
 train, val, train_y, val_y = train_test_split(input_ids, labels, test_size=0.2, random_state=2025)
 train_mask, val_mask, _, _ = train_test_split(attention_mask, labels, test_size=0.2, random_state=2025)
 
 batch_size = 8
-train_dataset = TensorDataset(torch.tensor(train), torch.tensor(train_mask), torch.tensor(train_y))
+train_dataset = TensorDataset(train, train_mask, train_y)
 train_dataloader = DataLoader(train_dataset, sampler=RandomSampler(train_dataset), batch_size=batch_size)
 
-val_dataset = TensorDataset(torch.tensor(val), torch.tensor(val_mask), torch.tensor(val_y))
+val_dataset = TensorDataset(val, val_mask, val_y)
 val_dataloader = DataLoader(val_dataset, sampler=SequentialSampler(val_dataset), batch_size=batch_size)
 
-# 모델 로드 및 설정
 model = MobileBertForSequenceClassification.from_pretrained('google/mobilebert-uncased', num_labels=2)
 model.to(device)
 
 optimizer = torch.optim.AdamW(model.parameters(), lr=2e-5, eps=1e-8)
-epochs = 4
+epochs = 5
 scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=0,
                                             num_training_steps=len(train_dataloader) * epochs)
 
@@ -94,8 +92,7 @@ for idx, (loss, train_acc, val_acc) in enumerate(epochs_results, start=1):
     print(f"Epoch {idx}: Loss: {loss:.4f}, Train Acc: {train_acc:.4f}, Val Acc: {val_acc:.4f}")
 
 print("\n## 모델 저장 ##")
-save_path = "donald-comment"
+save_path = "donald-tariff"
 model.save_pretrained(save_path)
 tokenizer.save_pretrained(save_path)
 print("모델 저장 완료:", save_path)
-
