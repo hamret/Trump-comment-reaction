@@ -41,9 +41,10 @@ https://github.com/danmadeira/simple-icon-badges
 | **MSNBC** | Lawrence: Canada's Trudeau humiliates 'cowardly' Trump who backs down on tariffs. Again. | 902만회 | 31,340개 |
 | **The Late Show with Stephen Colbert** | Dumbest Trade War In History Effects Of Trump's Tariffs Already Being Felt Chicken Rental Deals | 415만회 | 8,618개  |
 
-본 분석을 통해 우리는 다음과 같은 질문에 답하고자 합니다:
+본 분석을 통해 다음과 같은 질문에 답하고자 했습니다,:
 
 - 언론사별로 트럼프의 관세 정책에 대한 대중 반응은 어떻게 달랐는가?
+- 언론사의 성향이 시청자나 대중들의 반응에 영향이 있는가?
 - 보도 방식과 시청자 의견 간에는 어떤 연관성이 있는가?
 - 감성 분석 결과를 통해 미국 내 여론 지형과 정치 성향을 예측할 수 있는가?
 
