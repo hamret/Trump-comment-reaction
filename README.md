@@ -8,42 +8,75 @@ badge 아이콘 참고 사이트
 https://github.com/danmadeira/simple-icon-badges
 -->
 
-<img src="https://img.shields.io/badge/pycharm-%23000000.svg?&style=for-the-badge&logo=pycharm&logoColor=white" /> <img src="https://img.shields.io/badge/python-%233776AB.svg?&style=for-the-badge&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/pytorch-%23EE4C2C.svg?&style=for-the-badge&logo=pytorch&logoColor=white" />
+<img src="https://img.shields.io/badge/pycharm-%23000000.svg?&style=for-the-badge&logo=pycharm&logoColor=white" />
+<img src="https://img.shields.io/badge/python-%233776AB.svg?&style=for-the-badge&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/pytorch-%23EE4C2C.svg?&style=for-the-badge&logo=pytorch&logoColor=white" />
+<img src="https://img.shields.io/badge/tensorflow-%23FF6F00.svg?&style=for-the-badge&logo=tensorflow&logoColor=white" />
+<img src="https://img.shields.io/badge/numpy-%23013243.svg?&style=for-the-badge&logo=numpy&logoColor=white" />
+<img src="https://img.shields.io/badge/pandas-%23150458.svg?&style=for-the-badge&logo=pandas&logoColor=white" />
 
 ---
+
 ## 1. 이 주제는 왜?
-트럼프 전 미국 대통령의 관세정책은 자국 산업 보호와 무역 불균형 해소를 명분으로 시행되었으며, 
-세계 경제에 큰 파장을 일으켰다. 특히 미국 내에서도 이 정책에 대한 반응은 언론사별로 상이했으며, 
-대중의 의견 역시 다양하게 나타났다. 
-본 조사는 미국 주요 언론사인 CNBC, MSNBC, 그리고 The Late Show with Stephen Colbert의 유튜브 채널에 게시된 관련 영상의 댓글을 수집하고, 
-각 언론사별로 시청자 반응이 중립적인지, 지지적인지, 혹은 비판적인지를 분석하고자 한다. 
-이를 통해 우리는 미국 내 주요 언론이 트럼프의 관세정책을 어떤 시각에서 다루었고, 
-이에 대한 시청자들의 수용 태도는 어떠했는지를 확인할 수 있다. 
-또한 정치적 성향에 따라 언론사와 대중의 반응에 차이가 존재하는지를 파악함으로써, 
-언론과 여론 간 상호작용의 구조를 이해하는 데 기여할 수 있다. 
-궁극적으로는 정책 담론 형성 과정에서 언론과 대중 의견의 관계를 밝히는 데 의미가 있다.
+트럼프 전 미국 대통령이 2018년부터 시행한 일련의 관세 정책은 미국 중심의 보호무역주의를 전면에 내세운 대표적인 정책으로 평가됩니다. 그는 특히 중국을 중심으로 한 주요 무역국에 대해 고율의 관세를 부과하며, 자국 산업 보호와 무역 적자 해소를 강조했습니다. 이 정책은 단순한 경제 조치에 그치지 않고, 국제 정치, 글로벌 공급망, 환율 정책, 소비자 물가 등 다양한 분야에 중대한 파급 효과를 가져왔습니다.
+
+하지만 이러한 관세 정책은 미국 내에서도 **정치적 논쟁의 중심**에 있었으며, 언론사 및 정파에 따라 **상반된 평가**를 받았습니다. 보수 성향의 언론은 자국 산업 보호라는 측면에서 긍정적으로 평가한 반면, 진보 성향의 언론은 글로벌 공급망 교란과 소비자 피해, 무역 전쟁의 부작용 등을 비판했습니다. 이에 따라 대중 역시 해당 정책에 대해 상이한 태도와 의견을 보여주었습니다.
+
+특히 유튜브와 같은 플랫폼은 언론사가 콘텐츠를 배포하는 창구로 기능할 뿐 아니라, **대중의 실시간 의견이 반영되는 공간**이기도 합니다. 뉴스 클립, 풍자 프로그램, 인터뷰 영상 등에 남겨진 댓글을 통해 시청자의 감정, 입장, 그리고 사회적 분위기를 직관적으로 파악할 수 있습니다. 본 프로젝트는 이러한 유튜브 댓글을 분석함으로써, 언론사가 전달하는 메시지와 그것에 대한 대중의 반응 사이의 관계를 구체적으로 살펴보고자 합니다.
+
+분석 대상은 다음 세 언론사로 구성됩니다:
+
+- **CNBC**: 중립-보수 성향의 경제 전문 채널로, 정책의 실효성과 시장 반응에 집중
+- **MSNBC**: 진보 성향의 뉴스 채널로, 정책의 정치적 영향과 윤리적 정당성 비판
+- **The Late Show with Stephen Colbert**: 풍자적이고 진보적 색채가 강한 토크쇼로, 간접적 비판 및 유머를 통한 대중 소통 방식 채택
+
+본 분석을 통해 우리는 다음과 같은 질문에 답하고자 합니다:
+
+- 언론사별로 트럼프의 관세 정책에 대한 대중 반응은 어떻게 달랐는가?
+- 보도 방식과 시청자 의견 간에는 어떤 연관성이 있는가?
+- 감성 분석 결과를 통해 미국 내 여론 지형과 정치 성향을 예측할 수 있는가?
+
+이 연구는 단순한 여론 조사나 댓글 통계를 넘어서, **딥러닝 기반 자연어 처리 모델(BERT)**을 활용하여 **텍스트의 맥락 속 감정과 입장을 정량적으로 분석**하고, **정치 담론의 확산 구조를 탐색**하는 데 의의가 있습니다.
 
 ---
-## 2. 데이터 수집
-우선 트럼프의 관세 정책에 대한 반응을 가장 빠르게 확인할 수 있는곳은 유튜브라고 판단해 유튜브 댓글을 수집하였다.
+## 2. 데이터 수집 및 전처리
 
-- 유튜브 댓글 수집 코드는 코랩으로 실행하였고 https://m.blog.naver.com/galaxyworldinfo/223615648013 해당 블로그를 참고해 크롤링을 진행하였다. 
-- 수집한 영상 목록
-    + https://www.youtube.com/watch?v=h5P8WHBrQvo (CNBC),
-    + https://www.youtube.com/watch?v=arHHAfYbM-M (MSNBC),
-    + https://www.youtube.com/watch?v=F90YWg11UAU (The Late Show with Stephen Colbert)
+###  데이터 출처
+가장 대중적이고 즉각적인 반응을 확인할 수 있는 유튜브 플랫폼을 활용하였습니다. 다음 3개 언론사의 유튜브 영상에서 댓글을 수집하였습니다:
 
- - 데이터에 대한 EDA
-   + 총 데이터는 54302건의 댓글을 수집
-   + 각 댓글이 어떤 언론사의 유튜브에 달린 댓글인지 라벨링, 작성 시점도 함께 수집하여 자료 분석에 활용하였음
+-  CNBC: [https://www.youtube.com/watch?v=h5P8WHBrQvo](https://www.youtube.com/watch?v=h5P8WHBrQvo)  
+-  MSNBC: [https://www.youtube.com/watch?v=arHHAfYbM-M](https://www.youtube.com/watch?v=arHHAfYbM-M)  
+-  The Late Show with Stephen Colbert: [https://www.youtube.com/watch?v=F90YWg11UAU](https://www.youtube.com/watch?v=F90YWg11UAU)
+
+###  수집 방법
+- Python 기반 크롤링 코드 활용 (Google Colab에서 실행)  
+- 참고 블로그: [Naver 블로그 링크](https://m.blog.naver.com/galaxyworldinfo/223615648013)
+- 수집된 항목: 댓글 본문, 작성 시점, 해당 언론사 정보 등
+
+###  데이터 탐색 (EDA)
+
+- 총 수집된 댓글 수: **54,302건**
+- 각 댓글에 대해 언론사 라벨과 작성 날짜 정보 포함
+- 영어 댓글만 수집되어 자연어 처리에 적합
 ---
 ## 3. 학습 데이터 구축
-총 데이터의 수 54,302건 중에서 각 언론사별로 600개정도의 데이터를 추출해서 2000건의 데이터를 따로 분류후
-긍정 0, 부정 1, 중립 2 로 라벨링하였음
-### Case 1. 직접수집
- - 라벨링
-   + 유튜브에서 전부 영어로 된 댓글들만 수집하였으며
-   + 총 라벨링 건수 등
+
+###  목표
+
+총 54,302개의 댓글 중 일부 샘플을 정제 및 라벨링하여 BERT 모델 학습을 위한 데이터셋을 구성하였습니다.
+
+###  라벨링 기준
+
+- **긍정 (0)**: 트럼프의 관세 정책에 대해 **명확히 지지**하거나 긍정적으로 언급
+- **부정 (1)**: 정책에 대한 **반대 의견**, 비판적 혹은 부정적 표현
+- **중립 (2)**: **정보 제공**, 유머, 관찰 등의 **중립적 표현** (감정 없음)
+
+### 세부 사항
+
+- 전체 댓글 중 **무작위로 2,000건을 추출**하여 수작업으로 라벨링 진행
+- 각 언론사별로 약 **600여 건씩 균형 있게** 포함
+- 데이터의 라벨 분포는 모델 학습 시 클래스 불균형을 고려하여 분석
+
 ### Case 2. 수집된 데이터 활용
   - 10~20% 추출에 대한 기준
     + 긍정이 70%(35,000), 부정 30%(15,000) 이라면
