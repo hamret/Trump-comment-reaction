@@ -66,9 +66,9 @@ https://github.com/danmadeira/simple-icon-badges
 - ### 💬 수집한 유튜브 댓글 예시
 
 | text | time | channel | label |
-|------|------|---------|--|
+|------|------|---------|---|
 | This is absolutely mind-blowing! | 14 hours ago | CNBC | 1 |
-| Companies should start price labelling their products with the (RTT) Republican Trump Tax. e.g. $4.99 + RTT $12.23 | 3 days ago | CNBC |  |
+| Companies should start price labelling their products with the (RTT) Republican Trump Tax. e.g. $4.99 + RTT $12.23 | 3 days ago | CNBC | 1 |
 | Tariffs are paid by the companies. Consumers pay for products at retail, and if that company increases a price then they may lose that sale to a competitor. If one company wants to gain market-share then they can eat more of the costs while contracting existing US shoe makers to tool up for making their shoes. None of the companies making products like clothing have the monopoly needed for passing the costs completely to the customer. | 8 days ago | CNBC | 2 |
 
 
