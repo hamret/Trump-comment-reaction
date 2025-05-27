@@ -63,7 +63,7 @@ https://github.com/danmadeira/simple-icon-badges
 - Python 기반 크롤링 코드 활용 (Google Colab에서 실행)  
 - 참고 블로그: [Naver 블로그 링크](https://m.blog.naver.com/galaxyworldinfo/223615648013)
 - 수집된 항목: 댓글 본문, 작성 시점, 해당 언론사 정보
-- ### 💬 수집한 유튜브 댓글 예시
+- ### 수집한 유튜브 댓글 예시
 
 | text | time | channel | label |
 |------|------|---------|---|
