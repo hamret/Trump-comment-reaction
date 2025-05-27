@@ -63,6 +63,14 @@ https://github.com/danmadeira/simple-icon-badges
 - Python 기반 크롤링 코드 활용 (Google Colab에서 실행)  
 - 참고 블로그: [Naver 블로그 링크](https://m.blog.naver.com/galaxyworldinfo/223615648013)
 - 수집된 항목: 댓글 본문, 작성 시점, 해당 언론사 정보
+- ### 💬 수집한 유튜브 댓글 예시
+
+| text | time | channel | label |
+|------|------|---------|--|
+| This is absolutely mind-blowing! | 14 hours ago | CNBC | 1 |
+| Companies should start price labelling their products with the (RTT) Republican Trump Tax. e.g. $4.99 + RTT $12.23 | 3 days ago | CNBC |  |
+| Tariffs are paid by the companies. Consumers pay for products at retail, and if that company increases a price then they may lose that sale to a competitor. If one company wants to gain market-share then they can eat more of the costs while contracting existing US shoe makers to tool up for making their shoes. None of the companies making products like clothing have the monopoly needed for passing the costs completely to the customer. | 8 days ago | CNBC | 2 |
+
 
 ###  데이터 탐색 (EDA)
 
