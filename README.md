@@ -32,6 +32,15 @@ https://github.com/danmadeira/simple-icon-badges
 | **MSNBC** | 진보 | 정책의 **정치적 영향** 및 **윤리적 정당성**에 대한 비판적 보도 |
 | **The Late Show with Stephen Colbert** | 진보 (풍자 중심) | **풍자와 유머**를 통한 간접적 비판, **정치 풍자 토크쇼** 형식 |
 
+### 언론사 선정기준 
+본 프로젝트는 유튜브에서 **트럼프의 관세 정책**을 주제로 한 영상들 중, **조회수와 댓글 수가 많아 대중 반응이 활발한 콘텐츠**를 기준으로 언론사를 선정하였습니다.
+
+| 언론사 | 영상 제목 또는 콘텐츠 유형 | 조회수 (대략) | 댓글 수 (대략) |
+|--------|---------------------------|-------|-----------|
+| **CNBC** | How Companies Are Dodging Trump Tariffs On Canada, Mexico And China | 420만회 | 12,644개   | 
+| **MSNBC** | Lawrence: Canada's Trudeau humiliates 'cowardly' Trump who backs down on tariffs. Again. | 902만회 | 31,340개   |
+| **The Late Show with Stephen Colbert** | Dumbest Trade War In History Effects Of Trump's Tariffs Already Being Felt Chicken Rental Deals | 415만회 | 8,618개    |
+
 본 분석을 통해 우리는 다음과 같은 질문에 답하고자 합니다:
 
 - 언론사별로 트럼프의 관세 정책에 대한 대중 반응은 어떻게 달랐는가?
