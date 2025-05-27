@@ -51,7 +51,7 @@ https://github.com/danmadeira/simple-icon-badges
 ###  수집 방법
 - Python 기반 크롤링 코드 활용 (Google Colab에서 실행)  
 - 참고 블로그: [Naver 블로그 링크](https://m.blog.naver.com/galaxyworldinfo/223615648013)
-- 수집된 항목: 댓글 본문, 작성 시점, 해당 언론사 정보 등
+- 수집된 항목: 댓글 본문, 작성 시점, 해당 언론사 정보
 
 ###  데이터 탐색 (EDA)
 
