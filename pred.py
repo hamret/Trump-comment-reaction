@@ -2,7 +2,7 @@ import torch
 import pandas as pd
 from transformers import MobileBertForSequenceClassification, MobileBertTokenizer
 from tqdm import tqdm
-## 훈련후 라벨링 코드
+
 gpu = torch.backends.mps.is_available()
 device = torch.device("mps" if gpu else "cpu")
 print("Using device: ", device)
