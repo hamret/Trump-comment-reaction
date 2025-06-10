@@ -1,16 +1,10 @@
-import torch
 import pandas as pd
-import numpy as np
-from transformers import MobileBertForSequenceClassification, MobileBertTokenizer
-from tqdm import tqdm
 
-data_path = "result/predicted_mainC.csv"
-
-# 제대로 인코딩을 설정하고 컬럼 확인
-df = pd.read_csv(data_path, encoding="utf-8")  # 또는 encoding="ISO-8859-1" 시도
-
-print("✅ 컬럼명:", df.columns.tolist())  # <- 여기가 중요
-
-# 이후 그대로
-if 'text' not in df.columns:
-    raise ValueError("`text` column not found in the dataset.")
+data_path = "result/predicted_traiff.csv"
+try:
+    df = pd.read_csv(data_path, encoding="ISO-8859-1")
+    print(df.columns)
+except FileNotFoundError:
+    print(f"파일이 존재하지 않습니다: {data_path}")
+except Exception as e:
+    print(f"알 수 없는 오류 발생: {e}")

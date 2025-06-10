@@ -7,7 +7,7 @@ gpu = torch.backends.mps.is_available()
 device = torch.device("mps" if gpu else "cpu")
 print("Using device: ", device)
 
-data_path = "testdata/mainC.csv"
+data_path = "maindata/trump_tariff.csv"
 df = pd.read_csv(data_path, encoding="ISO-8859-1")
 
 if 'text' not in df.columns:
@@ -19,7 +19,7 @@ data_X = df['text'].tolist()
 
 print(f"Number of valid samples: {len(data_X)}")
 
-tokenizer = MobileBertTokenizer.from_pretrained("donald-tariff", do_lower_case=True)
+tokenizer = MobileBertTokenizer.from_pretrained("donald-tariff-finetuned", do_lower_case=True)
 
 inputs = tokenizer(data_X, truncation=True, max_length=256, add_special_tokens=True, padding="max_length")
 input_ids = inputs['input_ids']
@@ -34,7 +34,7 @@ test_data = torch.utils.data.TensorDataset(test_inputs, test_mask)
 test_dataloader = torch.utils.data.DataLoader(test_data, batch_size=batch_size)
 
 model = MobileBertForSequenceClassification.from_pretrained(
-    "/Users/daol/PycharmProjects/Trump-comment-reaction/donald-tariff"
+    "/Users/daol/PycharmProjects/Trump-comment-reaction/donald-tariff-finetuned"
 )
 model.to(device)
 model.eval()
@@ -55,6 +55,6 @@ for batch in tqdm(test_dataloader, desc="Inferencing Full DataSet"):
 
 df["label"] = test_pred
 
-output_path = "result/predicted_mainC.csv"
+output_path = "result/predicted_traiff.csv"
 df.to_csv(output_path, index=False, encoding="utf-8-sig")
 print(f"예측 결과 저장 완료: {output_path}")
