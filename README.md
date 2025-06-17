@@ -45,7 +45,7 @@ https://github.com/danmadeira/simple-icon-badges
 
 
 
-### 2. 영상 선정 기준
+## 2. 영상 선정 기준
 유튜브에서 각 언론사 채널에서**트럼프의 관세 정책**을 주제로 한 영상들 중, **조회수와 댓글 수가 많아 대중 반응이 활발한 콘텐츠**를 기준으로 영상을 선정하였습니다.
 
 | 언론사 | 영상 제목 | 조회수   | 댓글 수    |
@@ -64,16 +64,16 @@ https://github.com/danmadeira/simple-icon-badges
 이 연구는 단순한 여론 조사나 댓글 통계를 넘어서, **딥러닝 기반 자연어 처리 모델(BERT)**을 활용하여 **텍스트의 맥락 속 감정과 입장을 정량적으로 분석**하고, **정치 담론의 확산 구조를 탐색**하는 의의를 두었습니다.
 
 ---
-## 2. 데이터 수집 및 전처리
+## 3. 데이터 수집 및 전처리
 
-###  데이터 출처
+###  3.1 데이터 출처
 가장 대중적이고 즉각적인 반응을 확인할 수 있는 유튜브 플랫폼을 활용하였습니다. 다음 3개 언론사의 유튜브 영상에서 댓글을 수집하였습니다:
 
 -  CNBC: [https://www.youtube.com/watch?v=h5P8WHBrQvo](https://www.youtube.com/watch?v=h5P8WHBrQvo)  
 -  MSNBC: [https://www.youtube.com/watch?v=arHHAfYbM-M](https://www.youtube.com/watch?v=arHHAfYbM-M)  
 -  The Late Show with Stephen Colbert: [https://www.youtube.com/watch?v=F90YWg11UAU](https://www.youtube.com/watch?v=F90YWg11UAU)
 
-###  수집 방법
+###  3.2 수집 방법
 - Python 기반 크롤링 코드 활용 (Google Colab에서 실행)  
 - 참고 블로그: [Naver 블로그 링크](https://m.blog.naver.com/galaxyworldinfo/223615648013)
 - 수집된 항목: 댓글 본문, 작성 시점, 해당 언론사 정보
@@ -86,24 +86,22 @@ https://github.com/danmadeira/simple-icon-badges
 | Tariffs are paid by the companies. Consumers pay for products at retail, and if that company increases a price then they may lose that sale to a competitor. If one company wants to gain market-share then they can eat more of the costs while contracting existing US shoe makers to tool up for making their shoes. None of the companies making products like clothing have the monopoly needed for passing the costs completely to the customer. | 8 days ago | CNBC | 2 |
 
 
-###  데이터 탐색 (EDA)
+###  3.3 데이터 탐색 (EDA)
 
 - 총 수집된 댓글 수: **54,302건**
 - 각 댓글에 대해 언론사 라벨과 작성 날짜 정보 포함
 - 영어 댓글만 수집되어 자연어 처리에 적합하다.
 ---
-## 3. 학습 데이터 구축
+## 4. 학습 데이터 구축
 
-###  목표
+###  4.1 목표
 학습 데이터의 목표는 수집한 유튜브 댓글을
 트럼프 전 대통령의 관세 정책에 대한 대중의 입장을
 0(긍정), 1(부정), 2(중립)으로 구분하여 정밀하게 라벨링하는 것이었습니다.
 
 원본 데이터에서 54,302개의 댓글 중 2000개 샘플을 추출 후 라벨링하여 BERT 모델 학습을 위한 데이터셋을 구성하였습니다.
 
-### 세부 사항
-
-### 데이터 라벨링 과정
+### 4.2 데이터 라벨링 과정
 
 본 프로젝트에서는 BERT 기반 분석 모델 학습을 위한 데이터셋을 구축하기 위해, 총 2,000건의 유튜브 댓글을 수작업으로 라벨링하였습니다.
 
@@ -131,7 +129,7 @@ https://github.com/danmadeira/simple-icon-badges
 향후 자동 분류 모델의 평가 기준으로도 활용 가능합니다.
 
 
-## 수집된 데이터 활용
+## 4.4 수집된 데이터 활용
 ### 전체 라벨 분포도
 
 ![all g](img/all%20g.png)
@@ -150,12 +148,12 @@ https://github.com/danmadeira/simple-icon-badges
 특히 `The Late Show with Stephen Colbert` 와 같은 풍자적 성향의 채널에서는 **긍정(0.0) 및 중립(2.0)에 비해 부정적 반응이 더욱 두드러지게 나타나는 경향**을 확인할 수 있었다.  
 이러한 결과는 **뉴스 매체별 보도 톤의 차이**와 함께 **대중 여론의 전반적 경향성**도 반영하고 있다고 해석할 수 있다.
 
-## 4. MobileBERT Finetuning(재학습, 미세조정) 결과
+## 5. MobileBERT Finetuning(재학습, 미세조정) 결과
 <p align="left">
   <img src="img/valw.png" width="600px">
 </p>
 
-### 4.1 학습 결과
+### 5.1 학습 결과
 
 | epoch | 1 | 2 | 3 | 4 | 5 |
 |--------|----|----|----|----|----|
@@ -164,20 +162,20 @@ https://github.com/danmadeira/simple-icon-badges
 | Validation Accuracy | 0.5736 | 0.6359 | 0.2195 | 0.2419 | **0.8382** |
 
 
-### 4.2 epoch별 손실값과 정확도
+### 5.2 epoch별 손실값과 정확도
 
 초기 Training Loss가 매우 높게 시작되었지만, 에포크가 진행됨에 따라 빠르게 손실값이 줄고 정확도는 꾸준히 상승했습니다. 특히 마지막 에포크에서 Validation Accuracy가 0.8382로 최고치를 기록하며, 안정적인 학습이 이루어졌습니다.
 
 학습 중간에 정확도가 일시적으로 낮아지는 구간이 있었으나, 전체적으로 보았을 때 안정적인 학습 경향을 보이며 과적합 없이 성능이 개선되었습니다.
 
 
-### 4.3 학습 모델에 대한 전체적인 평가
+### 5.3 학습 모델에 대한 전체적인 평가
 
 해당 모델은 학습 초반 손실값이 매우 높았음에도 불구하고, 이후 빠르게 수렴하며 높은 Training Accuracy(0.9123)와 Validation Accuracy(0.8382)를 기록했습니다.
 
 전체 학습 흐름과 결과를 종합적으로 고려했을 때, **모델은 안정적인 수렴을 보여주며 실제 응용 환경에서도 활용 가능성이 높습니다.**
 
-### 4.4 학습된 모델을 원본 데이터에 적용한 결과
+### 5.4 학습된 모델을 원본 데이터에 적용한 결과
 
 모델 추론(inference)은 총 **52,459건의 원본 데이터**에 대해 수행되었으며, 아래와 같은 절차로 진행되었습니다.
 
@@ -203,7 +201,7 @@ https://github.com/danmadeira/simple-icon-badges
 
 
 
-## 5. 본 프로젝트를 통해 얻은 결과
+## 6. 본 프로젝트를 통해 얻은 결과
 
 <p align="left">
   <img src="img/CNBC.png" width="550px">
@@ -219,4 +217,4 @@ https://github.com/danmadeira/simple-icon-badges
 
 시간대별 반응 추이를 비교해 보았을때 시간이 지나도 여전히 부정적인 여론이 강한것을 알수 있습니다.
 
-## 6. 결론 및 느낀점
+## 7. 결론 및 느낀점
